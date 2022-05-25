@@ -1,0 +1,38 @@
+using System;
+
+
+namespace ConsoleApp3
+{
+    class Program //this is the base class
+    {
+        String firstname;//member of the classes or fields
+        String lastname;
+
+       public virtual void Method()//if the method is Virtual drived class must override this method
+        {
+            Console.WriteLine(firstname + " " + lastname);
+        }
+        public class PartTimeEmp : Program//Inheritence (drived  class Inherit the base class
+        {
+            public override void Method()//virtual keyword is polymorphism
+            {
+                base.Method();
+            }
+            int salary;
+        }
+     
+        static void Main(String[] args)
+        { 
+            Program emp = new Program();
+            emp.firstname = "hello";
+            emp.lastname = "world";
+            emp.Method();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+Output
+
+hello world
